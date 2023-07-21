@@ -1,0 +1,35 @@
+{
+  "name": "fastn-syntax",
+  "version": "0.0.3",
+  "publisher": "FifthTry private limited",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "repository": "https://github.com/harshdoesdev/fastn-syntax",
+  "categories": [
+    "Programming Languages"
+  ],
+  "license": "MIT",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ftd",
+        "aliases": [
+          "FifthTry Document"
+        ],
+        "extensions": [
+          "ftd"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ftd",
+        "scopeName": "source.ftd",
+        "path": "./syntax/ftd.tmLanguage.json"
+      }
+    ],
+    "icon": "resources/logo@2x.png"
+  }
+}

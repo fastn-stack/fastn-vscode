@@ -1,0 +1,211 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "FifthTry Document (.ftd)",
+  "comment": "Fastn (FTD) Language Syntax Highlighting",
+  "fileTypes": ["ftd"],
+  "scopeName": "source.ftd",
+  "patterns": [
+    {
+      "name": "entity.section.begin.container.ftd",
+      "match": "(--\\s*)(ftd\\..*|component|integer|decimal|string)\\s+(\\w+)|(import):",
+      "captures": {
+        "1": { "name": "punctuation.definition.section.begin.ftd" },
+        "2": { "name": "storage.type.ftd" },
+        "3": { "name": "entity.name.section.container.ftd" }
+      }
+    },
+    {
+      "name": "keyword.other.ftd",
+      "match": "\\b(caption|body|optional|integer|decimal|string|record|list)\\b",
+      "captures": {
+        "0": { "name": "keyword.other.ftd" }
+      }
+    },
+    {
+      "name": "entity.section.begin.record.ftd",
+      "match": "--\\s*record\\s+(\\w+):",
+      "captures": {
+        "1": { "name": "entity.name.section.record.ftd" }
+      }
+    },
+    {
+      "name": "entity.section.begin.user-defined.ftd",
+      "match": "(--\\s*)(\\w+.*):",
+      "captures": {
+        "1": { "name": "punctuation.definition.section.begin.ftd" },
+        "2": { "name": "entity.name.section.user-defined.ftd" }
+      }
+    },
+    {
+      "name": "entity.section.end.ftd",
+      "match": "(--\\s*)(end:)\\s*(\\w+)",
+      "captures": {
+        "1": { "name": "punctuation.definition.section.end.ftd" },
+        "2": { "name": "entity.name.section.end.ftd" }
+      }
+    },
+    {
+      "name": "entity.section.begin.element.ftd",
+      "match": "--\\s*(\\w+):",
+      "captures": {
+        "1": { "name": "entity.name.section.element.ftd" }
+      }
+    },
+    {
+      "name": "entity.variable.ftd",
+      "match": "(--\\s*)(integer|decimal|string|record)\\s+(\\w+):\\s+(.*)",
+      "captures": {
+        "1": { "name": "punctuation.definition.variable.begin.ftd" },
+        "2": { "name": "storage.type.ftd" },
+        "3": { "name": "variable.other.dollar-sign.ftd" },
+        "4": { "name": "meta.property.value.ftd" }
+      }
+    },
+    {
+      "name": "entity.property.name.ftd",
+      "match": "\\b[\\w.]+(\\s*-\\s*[\\w.]+)*(?=\\s*:\\s)",
+      "captures": {
+        "0": { "name": "entity.name.tag.ftd" }
+      }
+    },
+    {
+      "name": "entity.property.ftd",
+      "begin": "\\b\\w+(\\s*-\\s*\\w+)*\\s*:",
+      "end": "(?=$|\\r?\\n)",
+      "captures": {
+        "0": { "name": "meta.property.name.ftd" }
+      },
+      "patterns": [
+        {
+          "name": "string.value.ftd",
+          "match": "\\b\\w+\\b",
+          "captures": {
+            "0": { "name": "constant.other.key.ftd" }
+          }
+        },
+        {
+          "name": "string.value.ftd",
+          "match": "'.*?'",
+          "captures": {
+            "0": { "name": "string.quoted.single.ftd" }
+          }
+        },
+        {
+          "name": "string.value.ftd",
+          "match": "\".*?\"",
+          "captures": {
+            "0": { "name": "string.quoted.double.ftd" }
+          }
+        },
+        {
+          "name": "number.value.ftd",
+          "match": "\\b\\d+(?:\\.\\d+)?\\b",
+          "captures": {
+            "0": { "name": "constant.numeric.ftd" }
+          }
+        },
+        {
+          "name": "string.value.ftd",
+          "match": "\\\\[^\n]*",
+          "captures": {
+            "0": { "name": "comment.block.escape.ftd" }
+          }
+        },
+        {
+          "name": "meta.comment.inline.ftd",
+          "match": ";.*",
+          "captures": {
+            "0": { "name": "comment.line.semicolon.ftd" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "meta.comment.inline.ftd",
+      "match": "(?<!\\\\);;.*",
+      "captures": {
+        "0": { "name": "comment.line.semicolon.ftd" }
+      }
+    },
+    {
+      "name": "meta.comment.escape.ftd",
+      "match": "\\\\[-a-zA-Z0-9_:.]+",
+      "captures": {
+        "0": { "name": "comment.block.escape.ftd" }
+      }
+    },
+    {
+      "name": "comment.block.outline.ftd",
+      "begin": "\\\\--",
+      "end": "(?=(--\\s*end:\\s*\\w+)|(--\\s*\\w+.*:)|$)",
+      "captures": {
+        "0": { "name": "comment.block.outline.begin.ftd" }
+      }
+    },
+    {
+      "name": "comment.block.element.ftd",
+      "begin": "\\\\--\\s*(\\w+):",
+      "end": "(?=(--\\s*\\w+.*:)|$)",
+      "captures": {
+        "1": { "name": "entity.name.section.element.ftd" }
+      }
+    },
+    {
+      "name": "keyword.control.ftd",
+      "match": "if:",
+      "captures": {
+        "0": { "name": "keyword.control.if.ftd" }
+      }
+    },
+    {
+      "name": "keyword.operator.ftd",
+      "match": "\\+|-|\\*|/|%|\\^|>=|<=|==|!=|>|<",
+      "captures": {
+        "0": { "name": "keyword.operator.ftd" }
+      }
+    },
+    {
+      "name": "variable.internal.ftd",
+      "match": "\\$inherited\\$",
+      "captures": {
+        "0": { "name": "variable.other.internal.ftd" }
+      }
+    },
+    {
+      "name": "variable.processor.ftd",
+      "match": "\\$\\w+\\$",
+      "captures": {
+        "0": { "name": "variable.other.processor.ftd" }
+      }
+    },
+    {
+      "name": "variable.loop.ftd",
+      "match": "\\$\\w+\\$\\s+\\w+\\s+(as)\\s+\\w+",
+      "captures": {
+        "0": { "name": "variable.other.loop.ftd" },
+        "2": { "name": "keyword.other.loop.as.ftd" },
+        "3": { "name": "variable.other.loop.name.ftd" }
+      }
+    },
+    {
+      "name": "variable.access.ftd",
+      "match": "\\$\\w+\\b",
+      "captures": {
+        "0": { "name": "variable.other.dollar-sign.ftd" }
+      }
+    }
+  ],
+  "repository": {
+    "string": {
+      "patterns": [
+        {
+          "name": "constant.character.escape.ftd",
+          "match": "\\\\.",
+          "captures": {
+            "0": { "name": "constant.character.escape.ftd" }
+          }
+        }
+      ]
+    }
+  }
+}
