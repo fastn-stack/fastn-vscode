@@ -18,6 +18,14 @@ jobs:
       with:
         node-version: '14.x'
 
+    - name: Update Version in package.json
+      run: |
+        # Read the provided GitHub tag from the workflow input
+        tag_name=${{ github.event.inputs.releaseTag }}
+        
+        # Update the version field in package.json
+        sed -i "s/\"version\": \".*\"/\"version\": \"$tag_name\"/" package.json
+
     - name: Build VSCode Extension
       run: |
         npm install -g vsce
