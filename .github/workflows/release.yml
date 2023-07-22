@@ -1,6 +1,10 @@
 name: Build and Release VSCode Extension
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+        releaseTag:
+          description: 'Release Tag'     
+          required: true
 
 jobs:
   build_and_release:
@@ -25,6 +29,6 @@ jobs:
       with:
         files: "*.vsix"
         body: Install the extension and open any `.ftd` file to automatically enable syntax highlighting.
-        tag_name: ${{ github.ref }}
+        tag_name: ${{ github.event.inputs.releaseTag }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
