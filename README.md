@@ -1,4 +1,4 @@
-# `fastn` Language Syntax Highlighting for Visual Studio Code
+# `fastn` Extension for Visual Studio Code
 
 This extension provides syntax highlighting support for the `fastn` language in Visual Studio 
 Code. Enjoy enhanced readability of your FTD code with vibrant and accurate syntax highlighting.
@@ -17,4 +17,4 @@ We welcome feedback and contributions. Please report [issues](https://github.com
 If you have any ideas on how to improve it, or have any general feedback about it, head over to our discussion page, or hop on to 
 [our Discord: fastn.com/discord](https://fastn.com/discord/).
 
-Enjoy building with the `fastn` Syntax Highlighting extension for Visual Studio Code!
+Enjoy building with the `fastn` Extension for Visual Studio Code!
