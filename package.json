@@ -1,0 +1,43 @@
+{
+  "name": "fastn",
+  "displayName": "fastn",
+  "description": "Easy to learn full-stack open source language and framework",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "ftd",
+        "aliases": [
+          "FifthTry Document",
+          "ftd"
+        ],
+        "extensions": [
+          "ftd"
+        ],
+        "configuration": "./src/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ftd",
+        "scopeName": "source.ftd",
+        "path": "./src/syntaxes/ftd.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc",
+    "compile": "tsc -watch",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "vscode": "^1.1.37"
+  }
+}

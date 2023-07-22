@@ -1,0 +1,173 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "FifthTry Document",
+  "patterns": [
+    {
+      "name": "entity.section.begin.container.ftd",
+      "match": "(--\\s*)(ftd\\..*|component|integer|decimal|string)\\s+(\\w+-\\w+)|(import):",
+      "captures": {
+        "1": { "name": "punctuation.definition.section.begin.ftd" },
+        "2": { "name": "storage.type.ftd" },
+        "3": { "name": "entity.name.section.container.ftd" }
+      }
+    },
+    {
+      "name": "keyword.other.ftd",
+      "match": "\\b(caption|body|or-type|or|optional|children|integer|decimal|string|record|list)\\b",
+      "captures": {
+        "0": { "name": "keyword.other.ftd" }
+      }
+    },
+    {
+      "name": "entity.section.begin.record.ftd",
+      "match": "--\\s*record\\s+(\\w+-\\w+):",
+      "captures": {
+        "1": { "name": "entity.name.section.record.ftd" }
+      }
+    },
+    {
+      "name": "entity.section.begin.user-defined.ftd",
+      "match": "(--\\s*)(\\w+.*):",
+      "captures": {
+        "1": { "name": "punctuation.definition.section.begin.ftd" },
+        "2": { "name": "entity.name.section.user-defined.ftd" }
+      }
+    },
+    {
+      "name": "entity.section.end.ftd",
+      "match": "(--\\s*)(end:)\\s*(\\w+-\\w+)",
+      "captures": {
+        "1": { "name": "punctuation.definition.section.end.ftd" },
+        "2": { "name": "entity.name.section.end.ftd" }
+      }
+    },
+    {
+      "name": "entity.variable.ftd",
+      "match": "(--\\s*)(integer|decimal|string)\\s+(\\w+-\\w+):\\s+(.*)",
+      "captures": {
+        "1": { "name": "punctuation.definition.variable.begin.ftd" },
+        "2": { "name": "storage.type.ftd" },
+        "3": { "name": "variable.other.dollar-sign.ftd" },
+        "4": { "name": "meta.property.value.ftd" }
+      }
+    },
+    {
+      "name": "entity.property.name.ftd",
+      "match": "\\b[\\w.]+(\\s*-\\s*[\\w.]+)*(?=\\s*:\\s)",
+      "captures": {
+        "0": { "name": "entity.name.tag.ftd" }
+      }
+    },
+    {
+      "name": "entity.property.ftd",
+      "match": "\\b[\\w.]+(\\s*-\\s*[\\w.]+)*(?=\\s*:\\s)",
+      "captures": {
+        "0": { "name": "meta.property.name.ftd" }
+      }
+    },
+    {
+      "name": "string.value.arithmetic.curly-braces.ftd",
+      "begin": "{",
+      "end": "}",
+      "patterns": [
+        {
+          "name": "keyword.operator.ftd",
+          "match": "\\+|-|\\*|/|%|\\^|>=|<=|==|!=|>|<",
+          "captures": {
+            "0": { "name": "keyword.operator.ftd" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "support.function.calc",
+      "begin": "calc\\(",
+      "end": "\\)",
+      "patterns": [
+        {
+          "name": "keyword.operator.ftd",
+          "match": "\\+|-|\\*|/|%|\\^|>=|<=|==|!=|>|<",
+          "captures": {
+            "0": { "name": "keyword.operator.ftd" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "meta.comment.inline.ftd",
+      "match": "(?<!\\\\);;.*",
+      "captures": {
+        "0": { "name": "comment.line.semicolon.ftd" }
+      }
+    },
+    {
+      "name": "variable.internal.ftd",
+      "match": "\\$inherited\\$",
+      "captures": {
+        "0": { "name": "variable.other.internal.ftd" }
+      }
+    },
+    {
+      "name": "variable.processor.ftd",
+      "match": "\\$\\w+\\$",
+      "captures": {
+        "0": { "name": "variable.other.processor.ftd" }
+      }
+    },
+    {
+      "name": "variable.loop.ftd",
+      "match": "\\$\\w+\\$\\s+\\w+\\s+(as)\\s+\\w+",
+      "captures": {
+        "0": { "name": "variable.other.loop.ftd" },
+        "2": { "name": "keyword.other.loop.as.ftd" },
+        "3": { "name": "variable.other.loop.name.ftd" }
+      }
+    },
+    {
+      "name": "variable.access.ftd",
+      "match": "\\$\\w+\\b",
+      "captures": {
+        "0": { "name": "variable.other.dollar-sign.ftd" }
+      }
+    },
+    {
+      "name": "comment.block.ftd.begin",
+      "begin": "\\\\--\\s.*?:",
+      "end": "(--$|^$)",
+      "captures": {
+        "0": { "name": "punctuation.definition.comment.begin.ftd" }
+      },
+      "patterns": [
+        {
+          "name": "comment.block.ftd.line",
+          "begin": "\\\\--",
+          "end": "$",
+          "captures": {
+            "0": { "name": "comment.block.ftd.line" }
+          }
+        }
+      ]
+    }
+  ],
+  "repository": {
+    "string": {
+      "patterns": [
+        {
+          "name": "constant.character.escape.ftd",
+          "match": "\\\\.",
+          "captures": {
+            "0": { "name": "constant.character.escape.ftd" }
+          }
+        },
+        {
+          "name": "comment.block.escape.ftd",
+          "match": "\\\\\\\\|\\\\n|\\\\.",
+          "captures": {
+            "0": { "name": "constant.character.escape.ftd" }
+          }
+        }
+      ]
+    }
+  },
+  "scopeName": "source.ftd"
+}
