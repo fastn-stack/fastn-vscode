@@ -44,5 +44,9 @@
   "scripts": {
     "package": "vsce package"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
