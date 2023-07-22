@@ -30,8 +30,8 @@ jobs:
         files: "*.vsix"
         body: | 
             Install the extension and open any `.ftd` file to automatically enable syntax highlighting.
-            
-            Checkout fastn.com/vscode/ for installation instructions!
+
+            Checkout https://fastn.com/vscode/ for installation instructions!
         tag_name: ${{ github.event.inputs.releaseTag }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
