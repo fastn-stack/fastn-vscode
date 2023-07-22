@@ -45,8 +45,7 @@
     "package": "vsce package"
   },
   "devDependencies": {},
-  "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
