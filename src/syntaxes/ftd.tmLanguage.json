@@ -3,36 +3,16 @@
   "name": "FifthTry Document",
   "patterns": [
     {
-      "name": "entity.section.begin.container.ftd",
-      "match": "(--\\s*)(ftd\\..*|component|integer|decimal|string)\\s+(\\w+-\\w+)|(import):",
+      "name": "entity.variable.or.section.ftd",
+      "match": "(--\\s*)((integer|decimal|string)\\s+(\\w+-\\w+):\\s+(.*)|(\\w+.*):)",
       "captures": {
-        "1": { "name": "punctuation.definition.section.begin.ftd" },
-        "2": { "name": "storage.type.ftd" },
-        "3": { "name": "entity.name.section.container.ftd" }
+        "1": { "name": "punctuation.definition.section.or.variable.ftd" },
+        "3": { "name": "storage.type.ftd" },
+        "4": { "name": "variable.other.dollar-sign.ftd" },
+        "5": { "name": "meta.property.value.ftd" },
+        "6": { "name": "entity.name.section.user-defined.ftd" }
       }
-    },
-    {
-      "name": "keyword.other.ftd",
-      "match": "\\b(caption|body|or-type|or|optional|children|integer|decimal|string|record|list)\\b",
-      "captures": {
-        "0": { "name": "keyword.other.ftd" }
-      }
-    },
-    {
-      "name": "entity.section.begin.record.ftd",
-      "match": "--\\s*record\\s+(\\w+-\\w+):",
-      "captures": {
-        "1": { "name": "entity.name.section.record.ftd" }
-      }
-    },
-    {
-      "name": "entity.section.begin.user-defined.ftd",
-      "match": "(--\\s*)(\\w+.*):",
-      "captures": {
-        "1": { "name": "punctuation.definition.section.begin.ftd" },
-        "2": { "name": "entity.name.section.user-defined.ftd" }
-      }
-    },
+    },    
     {
       "name": "entity.section.end.ftd",
       "match": "(--\\s*)(end:)\\s*(\\w+-\\w+)",
@@ -42,27 +22,10 @@
       }
     },
     {
-      "name": "entity.variable.ftd",
-      "match": "(--\\s*)(integer|decimal|string)\\s+(\\w+-\\w+):\\s+(.*)",
-      "captures": {
-        "1": { "name": "punctuation.definition.variable.begin.ftd" },
-        "2": { "name": "storage.type.ftd" },
-        "3": { "name": "variable.other.dollar-sign.ftd" },
-        "4": { "name": "meta.property.value.ftd" }
-      }
-    },
-    {
       "name": "entity.property.name.ftd",
-      "match": "\\b[\\w.]+(\\s*-\\s*[\\w.]+)*(?=\\s*:\\s)",
+      "match": "^\\b(.*?)(?=\\s*:\\s)",
       "captures": {
-        "0": { "name": "entity.name.tag.ftd" }
-      }
-    },
-    {
-      "name": "entity.property.ftd",
-      "match": "\\b[\\w.]+(\\s*-\\s*[\\w.]+)*(?=\\s*:\\s)",
-      "captures": {
-        "0": { "name": "meta.property.name.ftd" }
+        "1": { "name": "entity.name.tag.ftd" }
       }
     },
     {
@@ -98,29 +61,6 @@
       "match": "(?<!\\\\);;.*",
       "captures": {
         "0": { "name": "comment.line.semicolon.ftd" }
-      }
-    },
-    {
-      "name": "variable.internal.ftd",
-      "match": "\\$inherited\\$",
-      "captures": {
-        "0": { "name": "variable.other.internal.ftd" }
-      }
-    },
-    {
-      "name": "variable.processor.ftd",
-      "match": "\\$\\w+\\$",
-      "captures": {
-        "0": { "name": "variable.other.processor.ftd" }
-      }
-    },
-    {
-      "name": "variable.loop.ftd",
-      "match": "\\$\\w+\\$\\s+\\w+\\s+(as)\\s+\\w+",
-      "captures": {
-        "0": { "name": "variable.other.loop.ftd" },
-        "2": { "name": "keyword.other.loop.as.ftd" },
-        "3": { "name": "variable.other.loop.name.ftd" }
       }
     },
     {
