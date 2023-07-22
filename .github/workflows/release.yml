@@ -1,9 +1,9 @@
-name: Release VSCode Extension
+name: Build and Release VSCode Extension
 on:
   workflow_dispatch: {}
 
 jobs:
-  release:
+  build_and_release:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -14,24 +14,18 @@ jobs:
       with:
         node-version: '14.x'
 
-    - name: Install dependencies and build extension
-      run: |
-        npm ci
-        npm run compile
-        npm run vscode:prepublish
+    - name: Install dependencies
+      run: npm ci
 
-    - name: Find and set VSIX filename
-      id: set_vsix_filename
+    - name: Build VSCode Extension
       run: |
-        export VSIX_FILE=$(find . -maxdepth 1 -name 'fastn-*.vsix' | head -n 1)
-        echo "Found VSIX file: $VSIX_FILE"
-        echo "::set-output name=vsix_file::$VSIX_FILE"
+        npm install -g vsce
+        vsce package
 
     - name: Create GitHub Release
-      id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        files: ${{ steps.set_vsix_filename.outputs.vsix_file }}
+        files: "*.vsix"
         body: Install the extension and open any `.ftd` file to automatically enable syntax highlighting. 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
