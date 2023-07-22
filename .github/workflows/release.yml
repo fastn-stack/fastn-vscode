@@ -20,9 +20,11 @@ jobs:
         vsce package
 
     - name: Create GitHub Release
+      id: create_release
       uses: softprops/action-gh-release@v1
       with:
         files: "*.vsix"
-        body: Install the extension and open any `.ftd` file to automatically enable syntax highlighting. 
+        body: Install the extension and open any `.ftd` file to automatically enable syntax highlighting.
+        tag_name: ${{ github.ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
