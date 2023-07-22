@@ -2,7 +2,7 @@
   "name": "fastn",
   "displayName": "fastn",
   "description": "This extension provides syntax highlighting support for the `fastn` language in Visual Studio  Code. Enjoy enhanced readability of your FTD code with vibrant and accurate syntax highlighting.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.0.0"
   },
