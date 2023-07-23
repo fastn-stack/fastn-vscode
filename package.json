@@ -2,15 +2,15 @@
   "name": "fastn",
   "displayName": "fastn",
   "description": "This extension provides syntax highlighting support for the `fastn` language in Visual Studio  Code. Enjoy enhanced readability of your FTD code with vibrant and accurate syntax highlighting.",
-  "publisher": "FifthTry",
-  "version": "0.0.1",
+  "publisher": "fastn-stack",
+  "version": "0.0.4",
   "icon": "images/logo.png",
   "engines": {
     "vscode": "^1.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harshdoesdev/fastn-syntax.git"
+    "url": "git+https://github.com/fastn-stack/fastn-vscode.git"
   },
   "categories": [
     "Programming Languages"
@@ -38,9 +38,9 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/harshdoesdev/fastn-syntax/issues"
+    "url": "https://github.com/fastn-stack/fastn-vscode/issues"
   },
-  "homepage": "https://github.com/harshdoesdev/fastn-syntax#readme",
+  "homepage": "https://github.com/fastn-stack/fastn-vscode#readme",
   "scripts": {
     "package": "vsce package"
   },
