@@ -26,6 +26,13 @@
       }
     },
     {
+      "name": "entity.property.name.internal.ftd",
+      "match": "^(?:^|\\s)(\\$.*?\\$)(?=\\s*:\\s)",
+      "captures": {
+        "1": { "name": "keyword.operator" }
+      }
+    },
+    {
       "name": "entity.property.color-value.ftd",
       "match": "#(?:[0-9a-fA-F]{3}){1,2}\\b|rgba?\\([\\s\\d.,]+\\)|hsla?\\([\\s\\d.%]+\\)",
       "captures": {

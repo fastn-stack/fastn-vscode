@@ -5,5 +5,5 @@
     "brackets": [],
     "autoClosingPairs": [],
     "surroundingPairs": [],
-    "wordPattern": "(#|\\$|\\*\\$)?(\\w+[\\w\\.|\\-]*)"
+    "wordPattern": "(#|\\$|\\*\\$)?(\\w+[\\w\\.|\\-]*)(\\$)?"
 }
