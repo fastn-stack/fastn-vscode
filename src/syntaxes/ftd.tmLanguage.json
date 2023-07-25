@@ -3,6 +3,24 @@
   "name": "FifthTry Document",
   "patterns": [
     {
+      "name": "comment.block.ftd.begin",
+      "begin": "\/--\\s.*?:",
+      "end": "(--$|^$)",
+      "captures": {
+        "0": { "name": "punctuation.definition.comment.begin.ftd" }
+      },
+      "patterns": [
+        {
+          "name": "comment.block.ftd.line",
+          "begin": "\/--",
+          "end": "$",
+          "captures": {
+            "0": { "name": "comment.block.ftd.line" }
+          }
+        }
+      ]
+    },
+    {
       "name": "entity.name.function",
       "match": "(--\\s*)(\\w+.*):",
       "captures": {
@@ -80,24 +98,6 @@
       "captures": {
         "0": { "name": "variable.other.dollar-sign.ftd" }
       }
-    },
-    {
-      "name": "comment.block.ftd.begin",
-      "begin": "\\\\--\\s.*?:",
-      "end": "(--$|^$)",
-      "captures": {
-        "0": { "name": "punctuation.definition.comment.begin.ftd" }
-      },
-      "patterns": [
-        {
-          "name": "comment.block.ftd.line",
-          "begin": "\\\\--",
-          "end": "$",
-          "captures": {
-            "0": { "name": "comment.block.ftd.line" }
-          }
-        }
-      ]
     }
   ],
   "repository": {
