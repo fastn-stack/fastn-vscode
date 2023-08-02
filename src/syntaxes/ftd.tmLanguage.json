@@ -58,13 +58,27 @@
       }
     },
     {
-      "name": "string.value.arithmetic.curly-braces.ftd",
+      "name": "string.operators.curly-braces.ftd",
       "begin": "{",
       "end": "}",
       "patterns": [
         {
+          "name": "punctuation.definition.paran.open.ftd",
+          "match": "\\(",
+          "captures": {
+            "0": { "name": "support.type" }
+          }
+        },
+        {
+          "name": "punctuation.definition.paran.close.ftd",
+          "match": "\\)",
+          "captures": {
+            "0": { "name": "support.type" }
+          }
+        },
+        {
           "name": "keyword.operator.ftd",
-          "match": "\\+|-|\\*|/|%|\\^|>=|<=|==|!=|>|<",
+          "match": "!|>=|<=|==|!=|>|<|&|&&|\\||\\|\\|",
           "captures": {
             "0": { "name": "keyword.operator" }
           }
@@ -78,7 +92,7 @@
       "patterns": [
         {
           "name": "keyword.operator.ftd",
-          "match": "\\+|-|\\*|/|%|\\^|>=|<=|==|!=|>|<",
+          "match": "\\+|-|\\*|/|%|\\^",
           "captures": {
             "0": { "name": "keyword.operator.ftd" }
           }
