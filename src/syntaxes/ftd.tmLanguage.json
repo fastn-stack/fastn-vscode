@@ -22,12 +22,12 @@
     },
     {
       "name": "entity.name.function",
-      "match": "(--\\s*)(\\w+.*):",
+      "match": "^(--\\s*)([\\w$\\-_. ]+)(?=\\s*:\\s)",
       "captures": {
         "1": { "name": "punctuation.definition.section.start.ftd" },
         "2": { "name": "entity.name.function" }
       }
-    },
+    },    
     {
       "name": "entity.section.end.ftd",
       "match": "(--\\s*)(end:)\\s*((?:\\w+[\\-\\.\\w]*)+)",
