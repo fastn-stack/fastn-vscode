@@ -22,12 +22,22 @@
     },
     {
       "name": "entity.name.function",
-      "match": "^(--\\s*)([\\w$\\-_. ]+)(?=\\s*:\\s)",
+      "match": "^(--\\s*)([\\w$\\-_. ]+)\\s([\\w$\\-_. ]+)\\(([^):]*)\\)(?:)",
       "captures": {
         "1": { "name": "punctuation.definition.section.start.ftd" },
-        "2": { "name": "entity.name.function" }
+        "2": { "name": "keyword.operator" },
+        "3": { "name": "entity.name.function" },
+        "4": { "name": "variable.parameter.ftd" }
       }
     },    
+    {
+      "name": "entity.name.section",
+      "match": "^(--\\s*)([\\w$\\-_. ]+)(?=\\s*:\\s)",
+      "captures": {
+        "0": { "name": "entity.name.function" },
+        "1": { "name": "punctuation.definition.section.start.ftd" }
+      }
+    }, 
     {
       "name": "entity.section.end.ftd",
       "match": "(--\\s*)(end:)\\s*((?:\\w+[\\-\\.\\w]*)+)",
