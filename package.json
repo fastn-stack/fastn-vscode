@@ -26,7 +26,11 @@
         "extensions": [
           "ftd"
         ],
-        "configuration": "./src/language-configuration.json"
+        "configuration": "./src/language-configuration.json",
+        "icon": {
+          "light": "./images/fastn.svg",
+          "dark": "./images/fastn.svg"
+        }
       }
     ],
     "grammars": [
