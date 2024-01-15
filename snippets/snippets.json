@@ -4,7 +4,7 @@
         "body": [
             "-- ftd.document: ${1:Title}\ndescription: ${2:Description}\nog-image: ${3:Image URL}\n\n$4\n\n-- end: ftd.document"
         ],
-        "description": "A text element"
+        "description": "A Document"
     },
     "Text": {
         "prefix": "text",
