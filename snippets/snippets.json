@@ -1,0 +1,142 @@
+{
+    "Document": {
+        "prefix": "document",
+        "body": [
+            "-- ftd.document: ${1:Title}\ndescription: ${2:Description}\nog-image: ${3:Image URL}\n\n$4\n\n-- end: ftd.document"
+        ],
+        "description": "A text element"
+    },
+    "Text": {
+        "prefix": "text",
+        "body": [
+            "-- ftd.text: ${1:Hello World}\n"
+        ],
+        "description": "A text element"
+    },
+    "FTDInteger": {
+        "prefix": "integer",
+        "body": [
+            "-- ftd.integer: ${1:value}\n"
+        ],
+        "description": "Prints an Integer"
+    },
+    "FTDDecimal": {
+        "prefix": "decimal",
+        "body": [
+            "-- ftd.decimal: ${1:value}\n"
+        ],
+        "description": "Prints a Decimal"
+    },
+    "FTDBoolean": {
+        "prefix": "boolean",
+        "body": [
+            "-- ftd.boolean: ${1:value}\n"
+        ],
+        "description": "Prints a Boolean"
+    },
+    "Column": {
+        "prefix": "column",
+        "body": [
+            "-- ftd.column:\n\n$1\n\n-- end: ftd.column"
+        ],
+        "description": "A columnn"
+    },
+    "Row": {
+        "prefix": "row",
+        "body": [
+            "-- ftd.row:\n\n$1\n\n-- end: ftd.row"
+        ],
+        "description": "A row"
+    },
+    "Image": {
+        "prefix": "image",
+        "body": [
+            "-- ftd.image: ${1:Image source}\nalt: ${2: Alternative Text}"
+        ],
+        "description": "An image"
+    },
+    "Video": {
+        "prefix": "video",
+        "body": [
+            "-- ftd.video: ${1: Video source}"
+        ],
+        "description": "A video"
+    },
+    "Component": {
+        "prefix": "component",
+        "body": [
+            "-- component $1:\n\n${2:;; Your component code}\n\n-- end: $1"
+        ],
+        "description": "A component definition"
+    },
+    "Integer": {
+        "prefix": "integer",
+        "body": [
+            "-- integer ${name:$1}: ${2:value}\n"
+        ],
+        "description": "Declares an integer variable"
+    },
+    "Decimal": {
+        "prefix": "decimal",
+        "body": [
+            "-- decimal ${name:$1}: ${2:value}\n"
+        ],
+        "description": "Declares a decimal variable"
+    },
+    "Boolean": {
+        "prefix": "boolean",
+        "body": [
+            "-- boolean ${name:$1}: ${2:value}\n"
+        ],
+        "description": "Declares a boolean variable"
+    },
+    "String": {
+        "prefix": "string",
+        "body": [
+            "-- string ${name:$1}: ${2:value}\n"
+        ],
+        "description": "Declares a string variable"
+    },
+    "Record": {
+        "prefix": "record",
+        "body": [
+            "-- record $1:\n$2"
+        ],
+        "description": "A record definition"
+    },
+    "OrType": {
+        "prefix": "or-type",
+        "body": [
+            "-- or-type $1:\n\n$2\n\n-- end: $1"
+        ],
+        "description": "An OrType definition"
+    },
+    "List": {
+        "prefix": "list",
+        "body": [
+            "-- ${1:list-type} list ${2:list-name}:\n\n$3\n\n-- end: $2"
+        ],
+        "description": "A List"
+    },
+    "Image Source": {
+        "prefix": ["src", "image-src"],
+        "body": [
+            "-- ftd.image-src $1:\nlight: ${2:Light mode image source}\ndark: ${3:Dark mode image source}"
+        ],
+        "description": "An image src definition"
+    },
+    "For-loop": {
+        "prefix": ["for"],
+        "body": [
+            "for: ${1:value} in ${2:list}"
+        ],
+        "description": "A Loop"
+    },
+    "If": {
+        "prefix": ["if"],
+        "body": [
+            "if: { ${1:condition} }"
+        ],
+        "description": "An if-condition"
+    }
+}

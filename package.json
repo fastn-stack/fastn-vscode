@@ -13,7 +13,8 @@
     "url": "git+https://github.com/fastn-stack/fastn-vscode.git"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Snippets"
   ],
   "contributes": {
     "languages": [
@@ -38,6 +39,12 @@
         "language": "ftd",
         "scopeName": "source.ftd",
         "path": "./src/syntaxes/ftd.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "ftd",
+        "path": "./snippets/snippets.json"
       }
     ]
   },
