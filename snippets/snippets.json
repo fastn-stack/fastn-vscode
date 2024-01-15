@@ -51,7 +51,7 @@
     "Image": {
         "prefix": "image",
         "body": [
-            "-- ftd.image: ${1:Image source}\nalt: ${2: Alternative Text}"
+            "-- ftd.image: ${1:Image source}\nalt: ${2:Alternative Text}"
         ],
         "description": "An image"
     },
