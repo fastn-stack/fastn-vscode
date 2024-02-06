@@ -17,6 +17,7 @@
     "Snippets"
   ],
   "main": "./out/extension.js",
+  "activationEvents": [],
   "contributes": {
     "languages": [
       {
