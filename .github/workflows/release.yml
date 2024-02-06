@@ -28,6 +28,8 @@ jobs:
 
     - name: Build VSCode Extension
       run: |
+        npm i
+        npm vscode:prepublish
         npm install -g vsce
         vsce package -o fastn-vscode-${{ github.event.inputs.releaseTag }}.vsix
 
